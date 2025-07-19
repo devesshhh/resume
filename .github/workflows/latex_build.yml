@@ -3,12 +3,12 @@ name: Build LaTeX Resume
 on:
   push:
     branches:
-      - main 
+      - main
 
-permissions: 
+permissions:
   contents: write
   pages: write
-  id-token: write 
+  id-token: write
 
 jobs:
   build:
@@ -21,18 +21,24 @@ jobs:
     - name: Compile LaTeX
       uses: xu-cheng/latex-action@v2
       with:
-        root_file: resume.tex 
+        root_file: resume.tex
         args: -pdflatex -file-line-error -interaction=nonstopmode
 
     - name: Upload PDF to Artifacts (for debugging/download)
       uses: actions/upload-artifact@v4
       with:
         name: resume-pdf
-        path: resume.pdf 
+        path: resume.pdf
+
+    - name: Prepare deploy directory # NEW STEP
+      run: mkdir _site
+
+    - name: Copy PDF to deploy directory # NEW STEP
+      run: cp resume.pdf _site/resume.pdf
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: . 
-        keep_files: false 
+        publish_dir: _site # CHANGED FROM '.' TO '_site'
+        keep_files: false
