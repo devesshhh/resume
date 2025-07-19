@@ -1,0 +1,33 @@
+name: Build LaTeX Resume
+
+on:
+  push:
+    branches:
+      - main # Or 'master', depending on your default branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Compile LaTeX
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: resume.tex # <--- IMPORTANT: Change this if your main .tex file has a different name (e.g., 'my_cv.tex')
+        args: -xelatex -file-line-error -interaction=nonstopmode
+
+    - name: Upload PDF to Artifacts (for debugging/download)
+      uses: actions/upload-artifact@v4
+      with:
+        name: resume-pdf
+        path: resume.pdf # <--- IMPORTANT: This should be the name of your compiled PDF
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: . # Publishes the root directory where resume.pdf exists
+        keep_files: false # Overwrites existing files in gh-pages branch
