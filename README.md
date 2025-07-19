@@ -15,7 +15,7 @@ This isn't just a static document; it's a dynamic and living representation of m
 ## View My Resume
 
 You can view the latest PDF version of my resume directly online here:
-[View Devesh Rai (Satyam)'s Resume (PDF)](https://devesshhh.github.io/resume/resume.pdf)
+[View Devesh Rai's Resume (PDF)](https://devesshhh.github.io/resume/resume.pdf)
 
 ## Technologies Behind the Automation
 
