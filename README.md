@@ -2,7 +2,7 @@
 
 Welcome to my resume repository! This repository serves as the central, always up-to-date source for my professional resume.
 
-## About This Resumess
+## About This Resume
 
 This isn't just a static document; it's a dynamic and living representation of my skills, experience, and accomplishments. I've engineered an intelligent automation pipeline to ensure you always see my latest professional journey without any manual update hassles.
 
