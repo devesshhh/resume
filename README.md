@@ -26,6 +26,6 @@ You can view the latest PDF version of my resume directly online here:
 ## Connect with Me
 
 Feel free to connect or reach out!
-* **LinkedIn:** [https://www.linkedin.com/in/devesh-rai-544437230/] 
+ [LinkedIn](https://www.linkedin.com/in/devesshhh/)
 
 ---
